@@ -1,0 +1,40 @@
+---
+import Info from "./Info.astro";
+
+
+type Study = {
+    titulo: string;
+    fechaInicio: string;
+    fechaFin: string;
+    entidad: string;
+};
+
+const studies: Study[] = [
+    {
+        titulo: "Tecnologo en analisis y desarrollo de software",
+        fechaInicio: "Octubre 2023",
+        fechaFin: "Diciembre 2025",
+        entidad: "SENA: Servicio Nacional de Aprendizaje"
+    },
+    {
+        titulo: "Tecnico en desarrollo de software",
+        fechaInicio: "Enero 2018",
+        fechaFin: " Diciembre 2019",
+        entidad: "SENA: Servicio Nacional de Aprendizaje"
+    }
+]
+---
+
+<section class="text-white py-12">
+    <div class="w-[356px] font-semibold leading-tight">
+        <h2 class="text-[80px] opacity-50">Mis</h2>
+        <h2 class="text-[80px] text-end">Estudios</h2>
+    </div>
+    {
+        studies.map((study) => {
+            return (
+                <Info titulo={study.titulo} fechaInicio={study.fechaInicio} fechaFin={study.fechaFin} entidad={study.entidad} />
+            )
+        })
+    }
+</div>

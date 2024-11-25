@@ -1,0 +1,40 @@
+---
+import Info from "./Info.astro";
+
+
+type Experience = {
+    titulo: string;
+    fechaInicio: string;
+    fechaFin: string;
+    entidad: string;
+};
+
+const experiences: Experience[] = [
+    {
+        titulo: "Desarrollador Front-End ",
+        fechaInicio: "Octubre 2022",
+        fechaFin: "Actualidad",
+        entidad: "Globant"
+    },
+    {
+        titulo: "Desarrollador Front-End Trainee ",
+        fechaInicio: "Enero 2020",
+        fechaFin: "Agosto 2022",
+        entidad: "Mercadolibre "
+    }
+]
+---
+
+<section class="text-white py-12">
+    <div class="w-[656px] font-semibold leading-tight">
+        <h2 class="text-[80px] opacity-50">Explora</h2>
+        <h2 class="text-[80px] text-end">Mi experiencia</h2>
+    </div>
+    {
+        experiences.map((exp) => {
+            return (
+                <Info titulo={exp.titulo} fechaInicio={exp.fechaInicio} fechaFin={exp.fechaFin} entidad={exp.entidad}/>
+            )
+        })
+    }
+</section>

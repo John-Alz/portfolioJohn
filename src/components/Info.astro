@@ -1,0 +1,13 @@
+---
+
+const {titulo, fechaInicio, fechaFin, entidad} = Astro.props;
+
+---
+
+    <div class="text-white border-b pb-8 flex flex-col gap-8 mt-12">
+        <div class="flex justify-between items-center">
+            <h2 class="text-4xl">{titulo}</h2>
+        <p>{fechaInicio} - {fechaFin}</p>
+        </div>
+        <p>{entidad}</p>
+    </div>
