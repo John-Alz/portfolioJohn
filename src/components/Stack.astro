@@ -1,0 +1,72 @@
+---
+import CardTech from "./CardTech.astro";
+
+type Technology = {
+    image: string;
+    title: string;
+    tag: string;
+};
+
+const technologies: Technology[] = [
+    {
+        image: "https://i.postimg.cc/0QnYwBtn/Figma.png",
+        title: "Figma",
+        tag: "Diseño",
+    },
+    {
+        image: "https://i.postimg.cc/0QnYwBtn/Figma.png",
+        title: "Figma",
+        tag: "Diseño",
+    },
+    {
+        image: "https://i.postimg.cc/0QnYwBtn/Figma.png",
+        title: "Figma",
+        tag: "Diseño",
+    },
+    {
+        image: "https://i.postimg.cc/0QnYwBtn/Figma.png",
+        title: "Figma",
+        tag: "Diseño",
+    },
+    {
+        image: "https://i.postimg.cc/0QnYwBtn/Figma.png",
+        title: "Figma",
+        tag: "Diseño",
+    },
+    {
+        image: "https://i.postimg.cc/0QnYwBtn/Figma.png",
+        title: "Figma",
+        tag: "Diseño",
+    },
+    
+    
+];
+---
+
+<section class="text-white">
+    <div class="w-3/6 font-semibold leading-tight mb-12">
+        <h2 class="text-[80px] opacity-50">Acerca</h2>
+        <h2 class="text-[80px] text-end">De mi tech stack</h2>
+    </div>
+    <div class="gridStack">
+        {
+            technologies.map((tech, i) => {
+                return (
+                    <CardTech image={tech.image} title={tech.title} tag={tech.tag}/>
+                );
+            })
+        }
+    </div>
+</section>
+<style>
+    .gridStack {
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(300px, 1fr)
+        );
+        gap: 32px;
+    }
+</style>

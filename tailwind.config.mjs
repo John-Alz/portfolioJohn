@@ -6,7 +6,9 @@ export default {
 		colors: {
 			'white': '#FFFFFF',
 			'black': '#000000',
+			'blackAbout': '#141414',
 			'grayv1': '#C4C4C4',
+			'grayv2': '#808080',
 			'violet': '#763CAC',
 			'blackBg': '#1E1E1E',
 		},
