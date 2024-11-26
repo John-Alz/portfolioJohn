@@ -1,67 +1,89 @@
 ---
 type Project = {
-    image: string;
-    title: string;
-    tags: string[];
+  image: string;
+  title: string;
+  tags: string[];
 };
 
 const projects: Project[] = [
-    {
-        image: "https://i.postimg.cc/15SXwpCd/Card-Element-desktop.png",
-        title: "Pizza Hut Aruba",
-        tags: ["HTML", "CSS", "JavaScript"],
-    },
-    {
-        image: "https://i.postimg.cc/1zNcF6Mf/Group-39.png",
-        title: "Space turism",
-        tags: ["HTML", "CSS", "JavaScript", "React"],
-    },
-    {
-        image: "https://i.postimg.cc/FKjkmxDg/Group-40.png",
-        title: "Properties list",
-        tags: ["HTML", "CSS", "JavaScript", "React", "Redux"],
-    },
-    {
-        image: "https://i.postimg.cc/Dz2nJd7c/Group-41.png",
-        title: "BiteTv movies app",
-        tags: ["HTML", "CSS", "JavaScript", "React"],
-    },
+  {
+    image: "https://i.postimg.cc/XJ48S9pG/806shots-so1.png",
+    title: "HappyPaws",
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "NodeJS",
+      "Express",
+      "React",
+      "Redux",
+      "Tailwind",
+    ],
+  },
+  {
+    image: "https://i.postimg.cc/1zNcF6Mf/Group-39.png",
+    title: "Space turism",
+    tags: ["HTML", "CSS", "JavaScript", "React"],
+  },
+  {
+    image: "https://i.postimg.cc/FKjkmxDg/Group-40.png",
+    title: "Properties list",
+    tags: ["HTML", "CSS", "JavaScript", "React", "Redux"],
+  },
+  {
+    image: "https://i.postimg.cc/Dz2nJd7c/Group-41.png",
+    title: "BiteTv movies app",
+    tags: ["HTML", "CSS", "JavaScript", "React"],
+  },
 ];
 ---
 
 <section id="projects" class="text-white">
-    <div class="w-4/12 font-semibold leading-tight mb-12 mt-12">
-        <h2 class="text-[80px] opacity-50">Mis</h2>
-        <h2 class="text-[80px] text-end">Proyectos</h2>
-    </div>
-    <div class="gridProjects">
-        {
-            projects.map((project, i) => {
-                return (
-                    <div class="w-[598px] flex flex-col gap-4">
-                        <img src={project.image} alt={project.title}>
-                        <div>
-                            <h2 class="text-3xl">{project.title}</h2>
-                            <div class="flex mt-4 gap-4">
-                                {
-                                project.tags.map((tag, i) => {
-                                    return (
-                                        <p class="py-2 px-5 border rounded-full text-sm hover:text-black hover:bg-white cursor-pointer">{tag}</p>
-                                    )
-                                })
-                            }
-                            </div>
-                        </div>
-                    </div>
-                )
-            })
-        }
-    </div>
+  <div class="w-[260px] lg:w-[430px] font-semibold leading-tight mb-12 mt-12">
+    <h2 class="text-5xl lg:text-[80px] opacity-50">Mis</h2>
+    <h2 class="text-5xl lg:text-[80px] text-end">Proyectos</h2>
+  </div>
+  <div class="grid grid-cols-1 gap-y-12 sm:gap-x-12 sm:grid-cols-2">
+    <!-- <div class="gridProjects"> -->
+    {
+      projects.map((project, i) => {
+        return (
+          <div class=" lg:w-[400px] xl:w-[598px] flex flex-col gap-4">
+            <img
+              class="lg:h-[433px] rounded-xl"
+              src={project.image}
+              alt={project.title}
+            />
+            <div>
+              <h2 class="text-3xl">{project.title}</h2>
+              <div class="grid grid-cols-4">
+                {project.tags.map((tag, i) => {
+                  return (
+                    <p class="py-2 px-4 text-xs xl:py-2 xl:px-5 border rounded-full xl:text-sm hover:text-black hover:bg-white cursor-pointer">
+                      {tag}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
 </section>
 <style>
+  .gridProjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(598px, 1fr));
+    row-gap: 80px;
+  }
+
+  @media (max-width: 1275px) {
     .gridProjects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(598px, 1fr));
-        row-gap: 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      row-gap: 80px;
     }
+  }
 </style>
