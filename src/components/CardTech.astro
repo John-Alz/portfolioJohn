@@ -4,8 +4,11 @@ const {image, title, tag} = Astro.props;
 
 ---
 
-<div class="w-[330px] h-[300px] bg-blackAbout rounded-2xl">
-    <img class="px-20 pt-20 pb-10" src={image} alt={title} />
+<div class="w-[330px] h-[300px] flex flex-col justify-end  bg-blackAbout rounded-2xl">
+    <div class="flex flex-col justify-center items-center">
+        <img class="w-[114px] rounded-xl pb-10 " src={image} alt={title} />
+    </div>
+    
     <div class="flex justify-between p-4">
         <h2 class="text-xl font-semibold">{title}</h2>
         <p class="text-grayv2 border border-grayv2 rounded-full py-2 px-4 text-xs">{tag}</p>

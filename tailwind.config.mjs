@@ -17,6 +17,7 @@ export default {
 		// 	'xl': '24px',
 		// 	'9xl': '140px'
 		// }
+
 	},
 	plugins: [],
 }
