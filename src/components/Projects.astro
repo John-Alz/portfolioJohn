@@ -38,10 +38,48 @@ const projects: Project[] = [
 ];
 ---
 
+<script>
+    import "splitting/dist/splitting.css";
+  import "splitting/dist/splitting-cells.css";
+  import Splitting from "splitting";
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  Splitting();
+
+  gsap.registerPlugin(ScrollTrigger);
+
+ const gsapItem = gsap.utils.toArray('.container-text-3');
+
+ gsapItem.forEach((gsIt: any) => {
+  const textChar = gsIt.querySelectorAll('.char')
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: gsIt,
+      start: "top 80%",
+      end: "70% 80%",
+      toggleActions: "play none none node",
+      // markers: true,
+      scrub: 12
+    }
+  })
+
+  tl.from(textChar, 1, {
+    opacity: 0,
+    yPercent: 130,
+    stagger: 0.08,
+    ease: "back.inOut"
+  })
+
+ })
+</script>
+
 <section id="projects" class="text-white">
-  <div class="w-[260px] lg:w-[430px] font-semibold leading-tight mb-12 mt-12">
-    <h2 class="text-5xl lg:text-[80px] opacity-50">Mis</h2>
-    <h2 class="text-5xl lg:text-[80px] text-end">Proyectos</h2>
+  <div class="w-[260px] lg:w-[430px] font-semibold leading-tight mb-12 mt-12 container-text-3">
+    <h2 data-splitting class="text-5xl lg:text-[80px] opacity-50">Mis</h2>
+    <h2 data-splitting class="text-5xl lg:text-[80px] text-end">Proyectos</h2>
   </div>
   <div class="grid grid-cols-1 gap-y-12 sm:gap-x-12 sm:grid-cols-2">
     <!-- <div class="gridProjects"> -->
@@ -50,7 +88,7 @@ const projects: Project[] = [
         return (
           <div class=" lg:w-[400px] xl:w-[598px] flex flex-col gap-4">
             <img
-              class="lg:h-[433px] rounded-xl"
+              class="lg:h-[433px] rounded-xl cursor-pointer hover:scale-[.9] duration-500"
               src={project.image}
               alt={project.title}
             />
@@ -59,7 +97,7 @@ const projects: Project[] = [
               <div class="flex gap-2 flex-wrap mt-4">
                 {project.tags.map((tag, i) => {
                   return (
-                    <p class=" py-2 px-4 text-xs xl:py-2 xl:px-5 border rounded-full xl:text-sm hover:text-black hover:bg-white cursor-pointer">
+                    <p class=" py-2 px-4 text-xs xl:py-2 xl:px-5 border rounded-full xl:text-sm cursor-pointer">
                       {tag}
                     </p>
                   );

@@ -24,10 +24,48 @@ const experiences: Experience[] = [
 ];
 ---
 
+<script>
+  import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
+import Splitting from "splitting";
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+Splitting();
+
+gsap.registerPlugin(ScrollTrigger);
+
+const gsapItem = gsap.utils.toArray('.container-text-4');
+
+gsapItem.forEach((gsIt: any) => {
+const textChar = gsIt.querySelectorAll('.char')
+
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: gsIt,
+    start: "top 80%",
+    end: "70% 80%",
+    toggleActions: "play none none node",
+    // markers: true,
+    scrub: 12
+  }
+})
+
+tl.from(textChar, 1, {
+  opacity: 0,
+  yPercent: 130,
+  stagger: 0.08,
+  ease: "back.inOut"
+})
+
+})
+</script>
+
 <section id="experience" class="text-white py-12">
-  <div class="w-[375px] lg:w-[617px] font-semibold leading-tight mb-12 mt-12">
-    <h2 class="text-5xl lg:text-[80px] opacity-50">Explora</h2>
-    <h2 class="text-5xl lg:text-[80px] text-end">Mi experiencia</h2>
+  <div class="w-[375px] lg:w-[617px] font-semibold leading-tight mb-12 mt-12 container-text-4">
+    <h2 data-splitting class="text-5xl lg:text-[80px] opacity-50">Explora</h2>
+    <h2 data-splitting class="text-5xl lg:text-[80px] text-end">Mi experiencia</h2>
   </div>
   {
     experiences.map((exp) => {

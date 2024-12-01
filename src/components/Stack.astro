@@ -87,10 +87,24 @@ const technologies: Technology[] = [
     }
 
   })
-
-  
-
  })
+
+ gsap.fromTo("#tech-cards .card", {
+  opacity: 0,
+  y: 100
+ },{
+  opacity: 1,
+  y: 0,
+  duration: 1,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: "#tech-cards",
+    start: 'top 70%',
+    end: 'bottom 20%',
+    scrub: 1.5
+  }
+ }
+)
 
 </script>
 
@@ -101,14 +115,16 @@ const technologies: Technology[] = [
       De mi tech stack
     </h2>
   </div>
-  <div
+  <div id="tech-cards"
     class="w-10/12 m-auto grid grid-cols-1 gap-y-12 sm:gap-x-12 sm:grid-cols-2 lg:grid-cols-3"
   >
     <!-- <div class="gridStack"> -->
     {
       technologies.map((tech, i) => {
         return (
-          <CardTech image={tech.image} title={tech.title} tag={tech.tag} />
+          <div class="card">
+            <CardTech image={tech.image} title={tech.title} tag={tech.tag} />
+          </div>
         );
       })
     }

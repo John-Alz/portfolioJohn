@@ -39,6 +39,16 @@
 
  })
 
+ gsap.to("#card-about", {
+  scrollTrigger: {
+    trigger: "#card-about",
+    start: "top 90%",
+    end: "bottom bottom",
+    scrub: 1.5
+  },
+  width: '100%',
+ })
+
 </script>
 
 <section id="about" class="text-white pb-12">
@@ -46,25 +56,25 @@
     <h2 data-splitting class="text-5xl lg:text-[80px] opacity-50 section-title">Acerca</h2>
     <h2  data-splitting class="text-5xl lg:text-[80px] text-end section-title">De mi</h2>
   </div>
-  <div id="card-about" class="bg-blackAbout p-8 rounded-3xl mt-12">
+  <div id="card-about" class="w-[60vw] m-auto bg-blackAbout p-8 rounded-3xl mt-12">
     <div class="xl:flex">
       <div class="xl:w-8/12">
-        <p class="xl:text-2xl">
-          ¡Hola! Soy <span class="text-violet">John Angel.</span>
+        <p class="xl:text-2xl text-grayv1 ">
+          ¡Hola! Soy <span class="text-white font-medium">John Angel.</span>
           <br />
           <br />
 
-          Soy un <span class="text-violet">desarrollador web Full Stack</span> con
-          una fuerte inclinación hacia el <span class="text-violet"
+          Soy un <span class="text-white font-medium">desarrollador web Full Stack</span> con
+          una fuerte inclinación hacia el <span class="text-white font-medium"
             >FrontEnd</span
-          > y el <span class="text-violet">diseño de aplicaciones web</span>. Me
+          > y el <span class="text-white font-medium">diseño de aplicaciones web</span>. Me
           encanta transformar ideas en experiencias digitales atractivas y
           funcionales. <br />
           <br />
 
-          Siempre estoy dispuesto a <span class="text-violet"
+          Siempre estoy dispuesto a <span class="text-white font-medium"
             >trabajar en equipo</span
-          > y me apasiona estar en <span class="text-violet"
+          > y me apasiona estar en <span class="text-white font-medium"
             >constante aprendizaje</span
           >, explorando nuevas tecnologías y metodologías. Recientemente, he
           estado trabajando en algunos proyectos que puedes encontrar en la
@@ -73,7 +83,7 @@
 
           Me entusiasma enfrentar nuevos desafíos y seguir creciendo en este
           campo que tanto me apasiona. ¿Te gustaría saber más? <span
-            class="text-violet">¡Contáctame!</span
+            class="text-white font-medium">¡Contáctame!</span
           >
         </p>
       </div>

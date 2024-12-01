@@ -21,10 +21,10 @@ export default function MarqueeWrapper() {
     <div className=' text-white text-[160px] font-bold mt-10'>
       <Marquee speed={70} >
         {
-          items.map((item) => {
+          items.map((item, i) => {
             return (
-              <div className='flex gap-12 cursor-pointer'>
-                <h2 className='item-text'>{item.title}</h2>
+              <div className='flex gap-12 cursor-pointer'  key={i}>
+                <h2 className='item-text opacity-60'>{item.title}</h2>
                 <img className='translate-y-5' src={item.img} alt="icon-react" />
                 <div></div>
               </div>

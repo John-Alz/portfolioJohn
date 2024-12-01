@@ -23,11 +23,48 @@ const studies: Study[] = [
   },
 ];
 ---
+<script>
+  import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
+import Splitting from "splitting";
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+Splitting();
+
+gsap.registerPlugin(ScrollTrigger);
+
+const gsapItem = gsap.utils.toArray('.container-text-5');
+
+gsapItem.forEach((gsIt: any) => {
+const textChar = gsIt.querySelectorAll('.char')
+
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: gsIt,
+    start: "top 80%",
+    end: "70% 80%",
+    toggleActions: "play none none node",
+    // markers: true,
+    scrub: 12
+  }
+})
+
+tl.from(textChar, 1, {
+  opacity: 0,
+  yPercent: 130,
+  stagger: 0.08,
+  ease: "back.inOut"
+})
+
+})
+</script>
 
 <section id="studies" class="text-white py-12">
-  <div class="w-[225px] lg:w-[380px] font-semibold leading-tight mb-12 mt-12">
-    <h2 class="text-5xl lg:text-[80px] opacity-50">Mis</h2>
-    <h2 class="text-5xl lg:text-[80px] text-end">Estudios</h2>
+  <div class="w-[225px] lg:w-[380px] font-semibold leading-tight mb-12 mt-12 container-text-5">
+    <h2 data-splitting  class="text-5xl lg:text-[80px] opacity-50">Mis</h2>
+    <h2 data-splitting  class="text-5xl lg:text-[80px] text-end">Estudios</h2>
   </div>
   {
     studies.map((study) => {

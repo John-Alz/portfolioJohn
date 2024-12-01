@@ -1,5 +1,6 @@
 ---
 import "animate.css";
+import Location from "./Location.astro";
 ---
 
 <script>
@@ -39,10 +40,10 @@ import "animate.css";
     </div>
     <div class="flex items-center justify-between text-white">
       <div class="w-3/6">
-        <p  class="xl:text-2xl animate__animated animate__bounce ">
-          Hola, soy <span class="text-violet">Jonh Jairo Angel</span>,
+        <p  class="xl:text-2xl text-grayv1 animate__animated animate__bounce ">
+          Hola, soy <span class="text-white font-medium">Jonh Jairo Angel</span>,
           desarrollador web con experiencia en frontend y backend. Utilizo
-          tecnologías como HTML, CSS, JavaScript, React y Node.js para crear
+          tecnologías como HTML, CSS, JavaScript, TypeScript, React, Node.js, Java y Spring para crear
           soluciones web eficientes y modernas.
         </p>
       </div>
@@ -54,8 +55,9 @@ import "animate.css";
         </h2>
       </div>
     </div>
-    <div class="flex gap-4 text-white mt-10">
-      <a
+    <div class="flex justify-between text-white mt-10">
+      <div class="w-3/6 flex gap-4">
+        <a
         href="https://github.com/John-Alz"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
@@ -79,6 +81,10 @@ import "animate.css";
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
         ><img src="../../public/icons/whatsapp.png" alt="" />Whatsapp</a
       >
+      </div>
+      <div class="w-3/6">
+        <Location/>
+      </div>
     </div>
   </section>
 </div>
