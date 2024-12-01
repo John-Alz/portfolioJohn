@@ -3,18 +3,20 @@ import AboutMe from "../components/AboutMe.astro";
 import Experience from "../components/Experience.astro";
 import HeroDesktop from "../components/HeroDesktop.astro";
 import HeroMobile from "../components/HeroMobile.astro";
+import MarqueeWrapper from "../components/marquee/MarqueeWrapper";
 import Projects from "../components/Projects.astro";
 import Stack from "../components/Stack.astro";
 import Study from "../components/Study.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="John Dev - Desarrollador">
+<Layout title="John Angel - Desarrollador">
   <HeroDesktop />
   <!-- <HeroMobile /> -->
+  <MarqueeWrapper client:only="react" />
   <AboutMe />
   <Stack />
   <Projects />
-  <Study />
   <Experience />
+  <Study />
 </Layout>

@@ -1,8 +1,33 @@
+---
+import "animate.css";
+---
+
+<script>
+  import "splitting/dist/splitting.css";
+  import "splitting/dist/splitting-cells.css";
+  import Splitting from "splitting";
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  Splitting();
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const gIl = gsap.timeline();
+
+  gIl.from(".title .char", 1, {
+    opacity: 0,
+    yPercent: 130,
+    stagger: 0.08,
+    ease: "back.out",
+  });
+</script>
+
 <div id="home" class="relative">
-  <!-- <img class="absolute bottom-80 right-[73em]" src="../../public/icons/Gradient2.png" alt=""> -->
   <section class="">
     <div class="flex items-center text-white">
-      <h2 class="w-8/12 sm:text-[80px] xl:text-[150px]">Desarrollador</h2>
+      <h2 data-splitting class="w-8/12 sm:text-[80px] xl:text-[150px] title">Desarrollador</h2>
       <div class="w-4/12 flex justify-center gap-4 translate-y-4">
         <button class="border py-3 px-6 xl:py-6 xl:px-12 rounded-full text-lg"
           >Curriculum</button
@@ -14,7 +39,7 @@
     </div>
     <div class="flex items-center justify-between text-white">
       <div class="w-3/6">
-        <p class="xl:text-2xl">
+        <p  class="xl:text-2xl animate__animated animate__bounce ">
           Hola, soy <span class="text-violet">Jonh Jairo Angel</span>,
           desarrollador web con experiencia en frontend y backend. Utilizo
           tecnologías como HTML, CSS, JavaScript, React y Node.js para crear
@@ -22,7 +47,11 @@
         </p>
       </div>
       <div class="w-3/6">
-        <h2 class="sm:text-[80px] xl:text-[150px] text-center">Full-Stack</h2>
+        <h2 data-splitting
+          class="sm:text-[80px] xl:text-[150px] text-center animate__animated animate__bounce title"
+        >
+          Full-Stack
+        </h2>
       </div>
     </div>
     <div class="flex gap-4 text-white mt-10">
@@ -53,3 +82,15 @@
     </div>
   </section>
 </div>
+<style>
+  #home {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1600px) {
+    #home {
+      width: 80%;
+    }
+  }
+</style>
