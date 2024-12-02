@@ -3,6 +3,8 @@ import Location from "./Location.astro";
 import { Image } from 'astro:assets';
 import menuOpen from '../../public/icons/menu-burger.svg'
 import menuClose from '../../public/icons/close-menu.svg'
+import { IoMenu, IoClose  } from "react-icons/io5";
+
 ---
 <script>
   const btnOpen = document.querySelector('#btn-open');
@@ -23,64 +25,65 @@ import menuClose from '../../public/icons/close-menu.svg'
 
 <header class="flex flex-col justify-center items-center">
   <div class="hidden xl:flex flex-col items-center">
-    <h2 class="text-white mt-4 mb-4 text-3xl font-bold">John</h2>
+    <h2 class="text-black dark:text-white mt-4 mb-4 text-3xl font-bold">John</h2>
   <nav class="hidden xl:flex xl:h-14">
     <ul
-      class="flex gap-2 items-center rounded-full bg-[#141414] text-grayv1 text-lg"
+      class="flex gap-2 items-center rounded-full bg-white dark:bg-blackAbout text-grayv1 text-lg"
     >
       <li
-        class="bg-white flex items-center text-black h-full px-5 rounded-full"
+        class="bg-black text-white flex items-center dark:bg-white dark:text-black h-full px-5 rounded-full"
       >
         <a href="#home">Inicio</a>
       </li>
       <li
-        class="flex items-center text-grayv1 h-full px-5 rounded-full hover:bg-white hover:text-black ease-in duration-300"
+        class="flex items-center text-grayv2 dark:text-grayv1 h-full px-5 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ease-in duration-300"
       >
         <a href="#about">Sobre mi</a>
       </li>
       <li
-        class="flex items-center text-grayv1 h-full px-5 rounded-full hover:bg-white hover:text-black ease-in duration-300"
+        class="flex items-center text-grayv2 dark:text-grayv1 h-full px-5 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ease-in duration-300"
       >
         <a href="#stack">Habilidades</a>
       </li>
       <li
-        class="flex items-center text-grayv1 h-full px-5 rounded-full hover:bg-white hover:text-black ease-in duration-300"
+        class="flex items-center text-grayv2 dark:text-grayv1 h-full px-5 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ease-in duration-300"
       >
         <a href="#projects">Proyectos</a>
       </li>
       <li
-        class="flex items-center text-grayv1 h-full px-5 rounded-full hover:bg-white hover:text-black ease-in duration-300"
+        class="flex items-center text-grayv2 dark:text-grayv1 h-full px-5 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ease-in duration-300"
       >
         <a href="#experience">Experiencia</a>
       </li>
       <li
-        class="flex items-center text-grayv1 h-full px-5 rounded-full hover:bg-white hover:text-black ease-in duration-300"
+        class="flex items-center text-grayv2 dark:text-grayv1 h-full px-5 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ease-in duration-300"
       >
         <a href="#studies">Estudios</a>
       </li>
       
       <li
-        class="flex items-center text-grayv1 h-full px-5 rounded-full hover:bg-white hover:text-black ease-in duration-300"
+        class="flex items-center text-grayv2 dark:text-grayv1 h-full px-5 rounded-full hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black ease-in duration-300"
       >
         <a href="#contact">Contacto</a>
       </li>
     </ul>
+    
   </nav>
   </div>
 
   <!-- Header mobile -->
   <div class="xl:hidden w-11/12 flex justify-between items-center mb-4">
     <div>
-      <h2 class="text-white mt-4 mb-4 text-5xl font-bold">John</h2>
+      <h2 class="text-black dark:text-white mt-4 mb-4 text-5xl font-bold">John</h2>
     </div>
     <div>
       <Location/>
     </div>
-    <div class="text-white relative">
-      <button id="btn-open" class="flex items-center"><Image src={menuOpen} alt='Icono de menu open'/></button>
+    <div class=" relative dark:text-white">
+      <button id="btn-open" class="flex items-center"><IoMenu size={60} /></button>
     </div>
     <div class="active inactive">
-      <div class="w-11/12 m-auto flex justify-between text-5xl md:text-7xl text-white">
+      <div class="w-11/12 m-auto flex justify-between text-5xl md:text-7xl text-black dark:text-white">
         <ul class="flex flex-col gap-12">
         <li><a href="#home">Inicio</a></li>
         <li><a href="#about">Sobre mi</a></li>
@@ -90,8 +93,8 @@ import menuClose from '../../public/icons/close-menu.svg'
         <li><a href="#studies">Estudios</a></li>
         <li><a href="#contact">Contacto</a></li>
         </ul>
-        <div id="btn-close">
-          <Image src={menuClose} alt='Icono de menu close'/>
+        <div id="btn-close" class="dark:text-white">
+          <IoClose size={60} />
         </div>
       </div>
     </div>

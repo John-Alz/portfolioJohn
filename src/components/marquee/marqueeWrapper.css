@@ -1,7 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .rfm-marquee-container {
     overflow: hidden;
 }
-.item-text {
-    color: transparent;
-    -webkit-text-stroke: 2px white;
-}
+@layer utilities {
+    .item-text {
+      color: transparent;
+      -webkit-text-stroke: 2px black;
+    }
+    .dark .item-text-dark {
+      color: transparent;
+      -webkit-text-stroke: 2px white;
+    }
+  }

@@ -1,6 +1,8 @@
 
 import Marquee from 'react-fast-marquee';
 import './marqueeWrapper.css'
+import { FaReact } from "react-icons/fa";
+
 
 type Item = {
   title: string
@@ -24,8 +26,11 @@ export default function MarqueeWrapper() {
           items.map((item, i) => {
             return (
               <div className='flex gap-12 cursor-pointer'  key={i}>
-                <h2 className='item-text opacity-60'>{item.title}</h2>
-                <img className='xl:translate-y-5' src={item.img} alt="icon-react" />
+                <h2 className='item-text dark:item-text-dark opacity-60'>{item.title}</h2>
+                {/* <img className='xl:translate-y-5' src={item.img} alt="icon-react" /> */}
+                <div  className='flex items-center text-black dark:text-white' >
+                <FaReact size={90}/>
+                </div>
                 <div></div>
               </div>
             )

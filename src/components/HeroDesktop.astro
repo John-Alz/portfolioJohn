@@ -1,13 +1,18 @@
 ---
 import "animate.css";
 import Location from "./Location.astro";
-import { Image } from 'astro:assets';
-import downloadIcon from '../../public/icons/downLoad.png'
-import downloadIconSvg from '../../public/icons/downLoad.svg'
-import githubIcon from '../../public/icons/github.png'
-import linkedinIcon from '../../public/icons/linkedin.png'
-import mailIcon from '../../public/icons/linkedin.png'
-import whatsappIcon from '../../public/icons/whatsapp.png'
+import { Image } from "astro:assets";
+import downloadIcon from "../../public/icons/downLoad.png";
+import downloadIconSvg from "../../public/icons/downLoad.svg";
+import githubIcon from "../../public/icons/github.png";
+import linkedinIcon from "../../public/icons/linkedin.png";
+import mailIcon from "../../public/icons/linkedin.png";
+import whatsappIcon from "../../public/icons/whatsapp.png";
+import { IoDownloadOutline } from "react-icons/io5";
+import { FaGithub, FaLinkedin, FaWhatsappSquare  } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
+
+
 ---
 
 <script>
@@ -38,126 +43,141 @@ import whatsappIcon from '../../public/icons/whatsapp.png'
     stagger: 0.08,
     ease: "back.out",
   });
-  
 </script>
 
 <div id="home" class="relative hidden sm:block">
   <section class="">
-    <div class="flex items-center text-white">
-      <h2 data-splitting class="w-[70%] sm:text-[80px] xl:text-[160px] title">Desarrollador</h2>
+    <div class="flex items-center text-black dark:text-white">
+      <h2 data-splitting class="w-[70%] sm:text-[80px] xl:text-[160px] title">
+        Desarrollador
+      </h2>
       <div class="w-[30%] flex justify-center gap-4 translate-y-4">
         <button class="border py-3 px-6 xl:py-6 xl:px-12 rounded-full text-lg"
           >Curriculum</button
         >
         <button class="border py-2 px-5 rounded-full"
-          ><Image src={downloadIcon} alt="Icono de descarga cv"/></button
-        >
+          ><IoDownloadOutline size={40} />
+        </button>
       </div>
     </div>
-    <div class="flex items-center justify-between text-white">
+    <div class="flex items-center justify-between text-black dark:text-white">
       <div class="w-3/6">
-        <p  class="xl:text-2xl text-grayv1 animate__animated animate__bounce ">
-          Hola, soy <span class="text-white font-medium">Jonh Jairo Angel</span>,
-          desarrollador web con experiencia en frontend y backend. Utilizo
-          tecnologías como HTML, CSS, JavaScript, TypeScript, React, Node.js, Java y Spring para crear
-          soluciones web eficientes y modernas.
+        <p
+          class="xl:text-2xl text-blackBg dark:text-grayv1 animate__animated animate__bounce"
+        >
+          Hola, soy <span class="text-black dark:text-white font-medium"
+            >Jonh Jairo Angel</span
+          >, desarrollador web con experiencia en frontend y backend. Utilizo
+          tecnologías como HTML, CSS, JavaScript, TypeScript, React, Node.js,
+          Java y Spring para crear soluciones web eficientes y modernas.
         </p>
       </div>
       <div class="w-3/6">
-        <h2 data-splitting
+        <h2
+          data-splitting
           class="sm:text-[80px] xl:text-[160px] text-center animate__animated animate__bounce title"
         >
           Full-Stack
         </h2>
       </div>
     </div>
-    <div class="flex justify-between text-white mt-10">
+    <div class="flex justify-between text-black dark:text-white mt-10">
       <div class="Xl:w-3/6 flex gap-4">
         <a
-        href="https://github.com/John-Alz"
-        target="_blank"
-        class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><Image src={githubIcon} alt="Icono de github"/>GitHub</a
-      >
-      <a
-        href="https://www.linkedin.com/in/john-angel-desarrollador/"
-        target="_blank"
-        class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><Image src={linkedinIcon} alt="Icono de linkedin"/>Linkedin</a
-      >
-      <a
-        href="mailto:jairoanngelll@gmail.com"
-        target="_blank"
-        class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><Image src={linkedinIcon} alt="Icono de mail"/>Mail</a
-      >
-      <a
-        href="https://api.whatsapp.com/send?phone=3144048308"
-        target="_blank"
-        class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><Image src={whatsappIcon} alt="Icono de whatsapp"/>Whatsapp</a
-      >
+          href="https://github.com/John-Alz"
+          target="_blank"
+          class="flex gap-2 py-2 px-4 rounded-full items-center border"
+          ><FaGithub size={30} />GitHub</a>
+        <a
+          href="https://www.linkedin.com/in/john-angel-desarrollador/"
+          target="_blank"
+          class="flex gap-2 py-2 px-4 rounded-full items-center border"
+          ><FaLinkedin size={30} />Linkedin</a
+        >
+        <a
+          href="mailto:jairoanngelll@gmail.com"
+          target="_blank"
+          class="flex gap-2 py-2 px-4 rounded-full items-center border"
+          ><IoMail size={30}  />Mail</a
+        >
+        <a
+          href="https://api.whatsapp.com/send?phone=3144048308"
+          target="_blank"
+          class="flex gap-2 py-2 px-4 rounded-full items-center border"
+          ><FaWhatsappSquare size={30} />Whatsapp</a>
       </div>
       <div class="hidden xl:block w-3/6">
-        <Location/>
+        <Location />
       </div>
     </div>
   </section>
 </div>
 
-
 <!-- Mobile -->
 <div id="home" class="relative sm:hidden">
   <section>
-    <div class="flex flex-col text-white">
-      <h2 data-splitting class=" text-[57px] md:text-[90px] title-2">Desarrollador</h2>
-      <h2 data-splitting class="text-[57px] md:text-[90px] flex justify-end title-2">Full-Stack</h2>
+    <div class="flex flex-col text-black dark:text-white">
+      <h2 data-splitting class="text-[57px] md:text-[90px] title-2">
+        Desarrollador
+      </h2>
+      <h2
+        data-splitting
+        class="text-[57px] md:text-[90px] flex justify-end title-2"
+      >
+        Full-Stack
+      </h2>
     </div>
-    <div class="flex flex-col justify-between text-grayv1">
+    <div class="flex flex-col justify-between text-blackBg dark:text-grayv1">
       <div>
         <p class="text-lg animate__animated animate__bounce">
-          Hola, soy <span class="text-white font-medium">Jonh Jairo Angel</span>,
-          desarrollador web con experiencia en frontend y backend. Utilizo
+          Hola, soy <span class="text-black dark:text-white font-medium"
+            >Jonh Jairo Angel</span
+          >, desarrollador web con experiencia en frontend y backend. Utilizo
           tecnologías como HTML, CSS, JavaScript, React y Node.js para crear
           soluciones web eficientes y modernas.
         </p>
       </div>
       <div class="flex gap-4 my-8">
-        <button class="border py-6 px-12 rounded-full text-2xl bg-white text-black">Curriculum</button
+        <button
+          class="border py-6 px-12 rounded-full text-2xl bg-black dark:bg-white text-white dark:text-black"
+          >Curriculum</button
         >
-        <button class="border py-3 px-6 rounded-full bg-white"
-          ><Image src={downloadIconSvg} alt="Icono de descarga cv"/></button
+        <button
+          class="border py-3 px-6 rounded-full bg-black dark:bg-white text-white dark:text-black"
+          ><IoDownloadOutline size={40} /></button
         >
       </div>
     </div>
-    <div class="w-11/12 grid grid-cols-2 gap-4 text-white md:grid-cols-4">
+    <div
+      class="w-11/12 grid grid-cols-2 gap-4 text-black dark:text-white md:grid-cols-4"
+    >
       <a
         href="https://github.com/John-Alz"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><Image src={githubIcon} alt="Icono de github"/>GitHub</a
+        ><FaGithub size={30} />GitHub</a
       >
       <a
         href="https://www.linkedin.com/in/john-angel-desarrollador/"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><Image src={linkedinIcon} alt="Icono de linkedin"/>Linkedin</a
+        ><FaLinkedin size={30} />Linkedin</a
       >
       <a
         href="mailto:jairoanngelll@gmail.com"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><Image src={linkedinIcon} alt="Icono de linkedin"/>Mail</a>
+        ><IoMail size={30}  />Mail</a
+      >
       <a
         href="https://api.whatsapp.com/send?phone=3144048308"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><Image src={whatsappIcon} alt="Icono de whatsapp"/>Whatsapp</a
+        ><FaWhatsappSquare size={30} />Whatsapp</a
       >
     </div>
   </section>
 </div>
-
 
 <style>
   #home {

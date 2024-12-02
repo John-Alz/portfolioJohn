@@ -1,6 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { FaMoon } from "react-icons/fa";
+
 
 interface Props {
   title: string;
@@ -9,8 +11,17 @@ interface Props {
 const { title } = Astro.props;
 ---
 
+<script>
+    const html = document.querySelector('html');
+    const btnDark = document.querySelector('#btn-dark');
+    
+    btnDark?.addEventListener('click', () => {
+    html?.classList.toggle('dark')
+  })
+</script>
+
 <!doctype html>
-<html lang="en">
+<html class="dark" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Desarrollador web" />
@@ -18,7 +29,10 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/logoJohn.svg" />
     <title>{title}</title>
   </head>
-  <body>
+  <body class=" dark:bg-dark bg-light bg-no-repeat bg-cover">
+    <div class="text-black dark:text-white">
+      <button id="btn-dark" class="fixed z-30 rounded-full bottom-4 right-4 bg-white dark:bg-blackAbout p-2 shadow-xl"><FaMoon size={40} /></button>
+    </div>
     <Header />
     <main>
       <slot />
@@ -28,8 +42,8 @@ const { title } = Astro.props;
 </html>
 <style is:global>  body {
     /* background: #0B0B0E; */
-    background: url(../../public/imgs/bg-12.png) no-repeat;
-    background-size: cover;
+    /* background: url(../../public/imgs/bg-12.png) no-repeat; 
+    background-size: cover;  */
   }
   ::-webkit-scrollbar {
     width: 10px;

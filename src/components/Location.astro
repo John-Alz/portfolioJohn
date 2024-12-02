@@ -12,7 +12,7 @@ const minutosFormateados = minutes.toString().padStart(2, "0");
 const periodo = hours > 12 ? "PM" : "AM";
 ---
 
-<div class="m-auto flex xl:justify-end text-white xl:text-xl xl:pt-4">
+<div class="m-auto flex xl:justify-end text-black dark:text-white xl:text-xl xl:pt-4">
     <div class="flex gap-4 items-center">
         <p class="border-r px-4 hidden sm:block">Bogota, Colombia</p>
         <div class="hidden sm:flex gap-2 items-center">
@@ -20,7 +20,7 @@ const periodo = hours > 12 ? "PM" : "AM";
             <p>{horaDoce}: {minutosFormateados} {periodo}</p>
         </div>
         
-        <div class="py-2 px-4 border border-white rounded-3xl flex items-center gap-2">
+        <div class="py-2 px-4 border dark:border-white rounded-3xl flex items-center gap-2">
             <span class="point">&nbsp</span>
             <p>Open to wrok</p>
         </div>
