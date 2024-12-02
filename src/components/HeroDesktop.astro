@@ -16,6 +16,14 @@ import Location from "./Location.astro";
   gsap.registerPlugin(ScrollTrigger);
 
   const gIl = gsap.timeline();
+  const gIl2 = gsap.timeline();
+
+  gIl2.from(".title-2 .char", 1, {
+    opacity: 0,
+    yPercent: 130,
+    stagger: 0.08,
+    ease: "back.out",
+  });
 
   gIl.from(".title .char", 1, {
     opacity: 0,
@@ -23,13 +31,14 @@ import Location from "./Location.astro";
     stagger: 0.08,
     ease: "back.out",
   });
+  
 </script>
 
-<div id="home" class="relative">
+<div id="home" class="relative hidden sm:block">
   <section class="">
     <div class="flex items-center text-white">
-      <h2 data-splitting class="w-8/12 sm:text-[80px] xl:text-[150px] title">Desarrollador</h2>
-      <div class="w-4/12 flex justify-center gap-4 translate-y-4">
+      <h2 data-splitting class="w-[70%] sm:text-[80px] xl:text-[160px] title">Desarrollador</h2>
+      <div class="w-[30%] flex justify-center gap-4 translate-y-4">
         <button class="border py-3 px-6 xl:py-6 xl:px-12 rounded-full text-lg"
           >Curriculum</button
         >
@@ -49,14 +58,14 @@ import Location from "./Location.astro";
       </div>
       <div class="w-3/6">
         <h2 data-splitting
-          class="sm:text-[80px] xl:text-[150px] text-center animate__animated animate__bounce title"
+          class="sm:text-[80px] xl:text-[160px] text-center animate__animated animate__bounce title"
         >
           Full-Stack
         </h2>
       </div>
     </div>
     <div class="flex justify-between text-white mt-10">
-      <div class="w-3/6 flex gap-4">
+      <div class="Xl:w-3/6 flex gap-4">
         <a
         href="https://github.com/John-Alz"
         target="_blank"
@@ -82,12 +91,68 @@ import Location from "./Location.astro";
         ><img src="../../public/icons/whatsapp.png" alt="" />Whatsapp</a
       >
       </div>
-      <div class="w-3/6">
+      <div class="hidden xl:block w-3/6">
         <Location/>
       </div>
     </div>
   </section>
 </div>
+
+
+<!-- Mobile -->
+<div id="home" class="relative sm:hidden">
+  <section>
+    <div class="flex flex-col text-white">
+      <h2 data-splitting class=" text-[60px] md:text-[90px] title-2">Desarrollador</h2>
+      <h2 data-splitting class="text-[60px] md:text-[90px] flex justify-end title-2">Full-Stack</h2>
+    </div>
+    <div class="flex flex-col justify-between text-grayv1">
+      <div>
+        <p class="text-lg animate__animated animate__bounce">
+          Hola, soy <span class="text-white font-medium">Jonh Jairo Angel</span>,
+          desarrollador web con experiencia en frontend y backend. Utilizo
+          tecnologías como HTML, CSS, JavaScript, React y Node.js para crear
+          soluciones web eficientes y modernas.
+        </p>
+      </div>
+      <div class="flex gap-4 my-8">
+        <button class="border py-6 px-12 rounded-full text-2xl bg-white text-black">Curriculum</button
+        >
+        <button class="border py-3 px-6 rounded-full bg-white"
+          ><img src="../../public/icons/downLoad.svg" alt="" /></button
+        >
+      </div>
+    </div>
+    <div class="w-11/12 grid grid-cols-2 gap-4 text-white md:grid-cols-4">
+      <a
+        href="https://github.com/John-Alz"
+        target="_blank"
+        class="flex gap-2 py-2 px-4 rounded-full items-center border"
+        ><img src="../../public/icons/github.png" alt="" />GitHub</a
+      >
+      <a
+        href="https://www.linkedin.com/in/john-angel-desarrollador/"
+        target="_blank"
+        class="flex gap-2 py-2 px-4 rounded-full items-center border"
+        ><img src="../../public/icons/linkedin.png" alt="" />Linkedin</a
+      >
+      <a
+        href="mailto:jairoanngelll@gmail.com"
+        target="_blank"
+        class="flex gap-2 py-2 px-4 rounded-full items-center border"
+        ><img src="../../public/icons/linkedin.png" alt="" />Mail</a
+      >
+      <a
+        href="https://api.whatsapp.com/send?phone=3144048308"
+        target="_blank"
+        class="flex gap-2 py-2 px-4 rounded-full items-center border"
+        ><img src="../../public/icons/whatsapp.png" alt="" />Whatsapp</a
+      >
+    </div>
+  </section>
+</div>
+
+
 <style>
   #home {
     width: 90%;

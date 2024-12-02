@@ -1,5 +1,26 @@
+---
+import Location from "./Location.astro";
+---
+<script>
+  const btnOpen = document.querySelector('#btn-open');
+  const btnClose = document.querySelector('#btn-close');
+  const section = document.querySelector('.active');
+
+  btnOpen?.addEventListener('click', () => {
+    section?.classList.toggle('inactive')
+    console.log('llegue');
+  })
+
+  btnClose?.addEventListener('click', () => {
+    section?.classList.toggle('inactive')
+    console.log('llegue');
+  })
+
+</script>
+
 <header class="flex flex-col justify-center items-center">
-  <h2 class="text-white mt-4 mb-4 text-3xl font-bold">John</h2>
+  <div class="hidden xl:flex flex-col items-center">
+    <h2 class="text-white mt-4 mb-4 text-3xl font-bold">John</h2>
   <nav class="hidden xl:flex xl:h-14">
     <ul
       class="flex gap-2 items-center rounded-full bg-[#141414] text-grayv1 text-lg"
@@ -42,4 +63,54 @@
       </li>
     </ul>
   </nav>
+  </div>
+
+  <!-- Header mobile -->
+  <div class="xl:hidden w-11/12 flex justify-between items-center mb-4">
+    <div>
+      <h2 class="text-white mt-4 mb-4 text-5xl font-bold">John</h2>
+    </div>
+    <div>
+      <Location/>
+    </div>
+    <div class="text-white relative">
+      <button id="btn-open" class="flex items-center"><img src="../../public/icons/menu-burger.svg" alt=""></button>
+    </div>
+    <div class="active inactive">
+      <div class="w-11/12 m-auto flex justify-between text-7xl text-white">
+        <ul class="flex flex-col gap-12">
+          <li>Inicio</li>
+        <li>Sobre mi</li>
+        <li>Habilidades</li>
+        <li>Proyectos</li>
+        <li>Experiencia</li>
+        <li>Estudios</li>
+        <li>Contacto</li>
+        </ul>
+        <div id="btn-close">
+          <img src="../../public/icons/close-menu.svg" alt="">
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
 </header>
+
+<style>
+
+
+.active {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #141414;
+  padding-top: 16px;
+  z-index: 20;
+}
+  .inactive {
+    display: none;
+  }
+</style>

@@ -9,10 +9,10 @@ const minutosFormateados = minutes.toString().padStart(2, "0");
 const periodo = hours > 12 ? "PM" : "AM";
 ---
 
-<div class="w-11/12 m-auto flex justify-end text-white text-xl ">
+<div class="m-auto flex xl:justify-end text-white xl:text-xl pt-4">
     <div class="flex gap-4 items-center">
-        <p class="border-r px-4">Bogota, Colombia</p>
-        <div class="flex gap-2 items-center">
+        <p class="border-r px-4 hidden sm:block">Bogota, Colombia</p>
+        <div class="hidden sm:flex gap-2 items-center">
             <img src="../../public/icons/sun-icon.svg" alt="">
             <p>{horaDoce}: {minutosFormateados} {periodo}</p>
         </div>
