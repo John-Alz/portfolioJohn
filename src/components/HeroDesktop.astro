@@ -1,13 +1,6 @@
 ---
 import "animate.css";
 import Location from "./Location.astro";
-import { Image } from "astro:assets";
-import downloadIcon from "../../public/icons/downLoad.png";
-import downloadIconSvg from "../../public/icons/downLoad.svg";
-import githubIcon from "../../public/icons/github.png";
-import linkedinIcon from "../../public/icons/linkedin.png";
-import mailIcon from "../../public/icons/linkedin.png";
-import whatsappIcon from "../../public/icons/whatsapp.png";
 import { IoDownloadOutline } from "react-icons/io5";
 import { FaGithub, FaLinkedin, FaWhatsappSquare  } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
@@ -43,6 +36,24 @@ import { IoMail } from "react-icons/io5";
     stagger: 0.08,
     ease: "back.out",
   });
+
+  // cv download
+
+  const btnDowload = document.querySelector('#btn-download');
+
+  btnDowload?.addEventListener('click', () => {
+    const linkDowload = document.createElement('a');
+    linkDowload.href = "../../public/CV/John Jairo Angel Alvarez-frontend-cv.pdf";
+    linkDowload.target = "_blank";
+    linkDowload.download = "John-Angel-Desarrollador-Web";
+    document.body.appendChild(linkDowload);
+    linkDowload.click();
+    document.body.removeChild(linkDowload);
+    console.log('llegue');
+    
+    
+  })
+
 </script>
 
 <div id="home" class="relative hidden sm:block">
@@ -55,7 +66,7 @@ import { IoMail } from "react-icons/io5";
         <button class="border py-3 px-6 xl:py-6 xl:px-12 rounded-full text-lg"
           >Curriculum</button
         >
-        <button class="border py-2 px-5 rounded-full"
+        <button id="btn-download" class="border py-2 px-5 rounded-full"
           ><IoDownloadOutline size={40} />
         </button>
       </div>
