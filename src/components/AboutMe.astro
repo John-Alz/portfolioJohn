@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import me from '../../public/imgs/Me.png'
 ---
 
 <script>
@@ -90,7 +91,7 @@
       <div
         class="flex justify-center items-center py-8 lg:w-4/12 lg:ustify-end"
       >
-        <img class="w-40 xl:w-[300px]" src="../../public/imgs/Me.png" alt="" />
+      <Image class="w-40 hidden xl:block xl:w-[300px]" src={me} alt='emoji me'/>
       </div>
     </div>
     <div class="mt-4 flex justify-center xl:justify-start">
