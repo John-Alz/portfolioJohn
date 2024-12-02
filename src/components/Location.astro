@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import sunIcon from '../../public/icons/sun-icon.svg'
+
 let date = new Date();
 let hours = date.getHours();
 let minutes = date.getMinutes();
@@ -13,7 +16,7 @@ const periodo = hours > 12 ? "PM" : "AM";
     <div class="flex gap-4 items-center">
         <p class="border-r px-4 hidden sm:block">Bogota, Colombia</p>
         <div class="hidden sm:flex gap-2 items-center">
-            <img src="../../public/icons/sun-icon.svg" alt="">
+            <Image src={sunIcon} alt="Icono de sol"/>
             <p>{horaDoce}: {minutosFormateados} {periodo}</p>
         </div>
         

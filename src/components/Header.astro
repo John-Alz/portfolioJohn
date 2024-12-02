@@ -1,5 +1,8 @@
 ---
 import Location from "./Location.astro";
+import { Image } from 'astro:assets';
+import menuOpen from '../../public/icons/menu-burger.svg'
+import menuClose from '../../public/icons/close-menu.svg'
 ---
 <script>
   const btnOpen = document.querySelector('#btn-open');
@@ -74,7 +77,7 @@ import Location from "./Location.astro";
       <Location/>
     </div>
     <div class="text-white relative">
-      <button id="btn-open" class="flex items-center"><img src="../../public/icons/menu-burger.svg" alt=""></button>
+      <button id="btn-open" class="flex items-center"><Image src={menuOpen} alt='Icono de menu open'/></button>
     </div>
     <div class="active inactive">
       <div class="w-11/12 m-auto flex justify-between text-7xl text-white">
@@ -88,7 +91,7 @@ import Location from "./Location.astro";
         <li>Contacto</li>
         </ul>
         <div id="btn-close">
-          <img src="../../public/icons/close-menu.svg" alt="">
+          <Image src={menuClose} alt='Icono de menu close'/>
         </div>
       </div>
     </div>

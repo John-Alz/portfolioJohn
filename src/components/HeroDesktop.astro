@@ -3,6 +3,11 @@ import "animate.css";
 import Location from "./Location.astro";
 import { Image } from 'astro:assets';
 import downloadIcon from '../../public/icons/downLoad.png'
+import downloadIconSvg from '../../public/icons/downLoad.svg'
+import githubIcon from '../../public/icons/github.png'
+import linkedinIcon from '../../public/icons/linkedin.png'
+import mailIcon from '../../public/icons/linkedin.png'
+import whatsappIcon from '../../public/icons/whatsapp.png'
 ---
 
 <script>
@@ -72,25 +77,25 @@ import downloadIcon from '../../public/icons/downLoad.png'
         href="https://github.com/John-Alz"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><img src="../../public/icons/github.png" alt="" />GitHub</a
+        ><Image src={githubIcon} alt="Icono de github"/>GitHub</a
       >
       <a
         href="https://www.linkedin.com/in/john-angel-desarrollador/"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><img src="../../public/icons/linkedin.png" alt="" />Linkedin</a
+        ><Image src={linkedinIcon} alt="Icono de linkedin"/>Linkedin</a
       >
       <a
         href="mailto:jairoanngelll@gmail.com"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><img src="../../public/icons/linkedin.png" alt="" />Mail</a
+        ><Image src={linkedinIcon} alt="Icono de mail"/>Mail</a
       >
       <a
         href="https://api.whatsapp.com/send?phone=3144048308"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><img src="../../public/icons/whatsapp.png" alt="" />Whatsapp</a
+        ><Image src={whatsappIcon} alt="Icono de whatsapp"/>Whatsapp</a
       >
       </div>
       <div class="hidden xl:block w-3/6">
@@ -121,7 +126,7 @@ import downloadIcon from '../../public/icons/downLoad.png'
         <button class="border py-6 px-12 rounded-full text-2xl bg-white text-black">Curriculum</button
         >
         <button class="border py-3 px-6 rounded-full bg-white"
-          ><img src="../../public/icons/downLoad.svg" alt="" /></button
+          ><Image src={downloadIconSvg} alt="Icono de descarga cv"/></button
         >
       </div>
     </div>
@@ -130,25 +135,24 @@ import downloadIcon from '../../public/icons/downLoad.png'
         href="https://github.com/John-Alz"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><img src="../../public/icons/github.png" alt="" />GitHub</a
+        ><Image src={githubIcon} alt="Icono de github"/>GitHub</a
       >
       <a
         href="https://www.linkedin.com/in/john-angel-desarrollador/"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><img src="../../public/icons/linkedin.png" alt="" />Linkedin</a
+        ><Image src={linkedinIcon} alt="Icono de linkedin"/>Linkedin</a
       >
       <a
         href="mailto:jairoanngelll@gmail.com"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><img src="../../public/icons/linkedin.png" alt="" />Mail</a
-      >
+        ><Image src={linkedinIcon} alt="Icono de linkedin"/>Mail</a>
       <a
         href="https://api.whatsapp.com/send?phone=3144048308"
         target="_blank"
         class="flex gap-2 py-2 px-4 rounded-full items-center border"
-        ><img src="../../public/icons/whatsapp.png" alt="" />Whatsapp</a
+        ><Image src={whatsappIcon} alt="Icono de whatsapp"/>Whatsapp</a
       >
     </div>
   </section>

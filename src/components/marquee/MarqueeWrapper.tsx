@@ -8,10 +8,10 @@ type Item = {
 }
 
 const items: Item[] = [
-  {title: "Diseño Web", img: "../../../public/imgs/react.svg"},
-  {title: "Desarrollo Front-End", img: "../../../public/imgs/react.svg"},
-  {title: "Desarrollo Back-End", img: "../../../public/imgs/react.svg"},
-  {title: "Responsive Design", img: "../../../public/imgs/react.svg"},
+  {title: "Diseño Web", img: "/imgs/react.svg"},
+  {title: "Desarrollo Front-End", img: "/imgs/react.svg"},
+  {title: "Desarrollo Back-End", img: "/imgs/react.svg"},
+  {title: "Responsive Design", img: "/imgs/react.svg"},
 ]
 
 export default function MarqueeWrapper() {
