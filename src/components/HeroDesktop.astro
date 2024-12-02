@@ -1,6 +1,8 @@
 ---
 import "animate.css";
 import Location from "./Location.astro";
+import { Image } from 'astro:assets';
+import downloadIcon from '../../public/icons/downLoad.png'
 ---
 
 <script>
@@ -43,7 +45,7 @@ import Location from "./Location.astro";
           >Curriculum</button
         >
         <button class="border py-2 px-5 rounded-full"
-          ><img src="/public/icons/downLoad.png" alt="" /></button
+          ><Image src={downloadIcon} alt="Icono de descarga cv"/></button
         >
       </div>
     </div>
