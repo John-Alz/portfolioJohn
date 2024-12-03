@@ -3,6 +3,7 @@ type Project = {
   image: string;
   title: string;
   tags: string[];
+  link: string;
 };
 
 const projects: Project[] = [
@@ -19,21 +20,25 @@ const projects: Project[] = [
       "Redux",
       "Tailwind",
     ],
+    link: "https://github.com/John-Alz/happyPaws"
   },
   {
     image: "https://i.postimg.cc/9ffr8YTG/space-Turism.png",
     title: "Space turism",
     tags: ["HTML", "CSS", "JavaScript", "React"],
+    link: "https://space-tourism-inky-two.vercel.app/"
   },
   {
     image: "https://i.postimg.cc/q7KNnvdK/148shots-so.png",
     title: "Properties list",
     tags: ["HTML", "CSS", "JavaScript", "React", "Redux"],
+    link: "https://properties-five.vercel.app/"
   },
   {
     image: "https://i.postimg.cc/ZKKtyshF/movix.png",
     title: "BiteTv movies app",
     tags: ["HTML", "CSS", "JavaScript", "React"],
+    link: "https://github.com/John-Alz/MOVIX"
   },
 ];
 ---
@@ -86,6 +91,7 @@ const projects: Project[] = [
     {
       projects.map((project, i) => {
         return (
+          <a href={project.link} target="_blank">
           <div class=" lg:w-[400px] xl:w-[598px] flex flex-col gap-4">
             <div class="flex justify-center bg-white dark:bg-blackAbout  rounded-xl cursor-pointer hover:scale-[.9] duration-500">
               <img
@@ -107,6 +113,7 @@ const projects: Project[] = [
               </div>
             </div>
           </div>
+        </a>
         );
       })
     }
