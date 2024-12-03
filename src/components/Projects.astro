@@ -7,7 +7,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    image: "https://i.postimg.cc/1zNcF6Mf/Group-39.png",
+    image: "https://i.postimg.cc/MGZQkSkf/happypaws.png",
     title: "HappyPaws",
     tags: [
       "HTML",
@@ -21,17 +21,17 @@ const projects: Project[] = [
     ],
   },
   {
-    image: "https://i.postimg.cc/1zNcF6Mf/Group-39.png",
+    image: "https://i.postimg.cc/9ffr8YTG/space-Turism.png",
     title: "Space turism",
     tags: ["HTML", "CSS", "JavaScript", "React"],
   },
   {
-    image: "https://i.postimg.cc/FKjkmxDg/Group-40.png",
+    image: "https://i.postimg.cc/q7KNnvdK/148shots-so.png",
     title: "Properties list",
     tags: ["HTML", "CSS", "JavaScript", "React", "Redux"],
   },
   {
-    image: "https://i.postimg.cc/Dz2nJd7c/Group-41.png",
+    image: "https://i.postimg.cc/ZKKtyshF/movix.png",
     title: "BiteTv movies app",
     tags: ["HTML", "CSS", "JavaScript", "React"],
   },
@@ -87,11 +87,13 @@ const projects: Project[] = [
       projects.map((project, i) => {
         return (
           <div class=" lg:w-[400px] xl:w-[598px] flex flex-col gap-4">
-            <img
-              class="lg:h-[433px] rounded-xl cursor-pointer hover:scale-[.9] duration-500"
+            <div class="flex justify-center bg-white dark:bg-blackAbout  rounded-xl cursor-pointer hover:scale-[.9] duration-500">
+              <img
+              class="lg:h-[433px]"
               src={project.image}
               alt={project.title}
             />
+            </div>
             <div>
               <h2 class="text-3xl">{project.title}</h2>
               <div class="flex gap-2 flex-wrap mt-4">
