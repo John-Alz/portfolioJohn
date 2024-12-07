@@ -1,0 +1,13 @@
+---
+const { titulo, fechaInicio, fechaFin, entidad, descripcion } = Astro.props;
+
+---
+<div id="info-section" class="text-black dark:text-white border-b pb-8 flex flex-col gap-8 mt-12 cursor-pointer  card-info-container">
+  <div class="flex flex-col sm:flex-row justify-between xl:items-center">
+    <h2 class="text-xl xl:text-4xl font-semibold ease-in duration-300 opacity-70">
+      {titulo}
+    </h2>
+    <p class="text-lg mt-4 sm:m-1 opacity-50">{fechaInicio} - {fechaFin}</p>
+  </div>
+    <p class="text-lg opacity-50">{entidad}</p>
+</div>

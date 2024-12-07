@@ -1,5 +1,5 @@
 ---
-import Info from "./Info.astro";
+import InfoStudy from "./InfoStudy.astro";
 
 type Study = {
   titulo: string;
@@ -69,7 +69,7 @@ tl.from(textChar, 1, {
   {
     studies.map((study) => {
       return (
-        <Info
+        <InfoStudy
           titulo={study.titulo}
           fechaInicio={study.fechaInicio}
           fechaFin={study.fechaFin}
