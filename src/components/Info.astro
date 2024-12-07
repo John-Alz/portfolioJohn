@@ -7,22 +7,11 @@ import { IoIosArrowDown } from "react-icons/io";
 <script>
   const infoSection = document.querySelectorAll('#info-section');
   const acordions = document.querySelectorAll('#acordion-content');
-  const arrow = document.querySelector('.arrow');
-
-  let icon = document.createElement('img')
-    arrow?.appendChild(icon);
-    icon.src = '../../public/icons/down.svg'
-    
 
   infoSection.forEach((infoSection, i) => {
     infoSection?.addEventListener('click', () => {
     const acordion = acordions[i]
     acordion?.classList.toggle('inactive');
-    if (acordion.classList.contains("inactive")) {
-      icon.src = '../../public/icons/down.svg'
-    } else {
-      icon.src = '../../public/icons/up.svg'
-    }
   })
   })
 
@@ -37,7 +26,7 @@ import { IoIosArrowDown } from "react-icons/io";
   </div>
   <div class="flex justify-between">
     <p class="text-lg opacity-50">{entidad}</p>
-    <p class="text-lg opacity-50 arrow">
+    <p class="text-lg opacity-50 arrow"><IoIosArrowDown size={30} />
     </p>
   </div>
   <div id="acordion-content" class="flex flex-col xl:flex-row justify-between overflow-hidden transition-all duration-300 inactive">
