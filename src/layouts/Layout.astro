@@ -14,10 +14,18 @@ const { title } = Astro.props;
 <script>
     const html = document.querySelector('html');
     const btnDark = document.querySelector('#btn-dark');
+    const cursorFollower = document.querySelector('.cursor-follower') as HTMLElement;
     
     btnDark?.addEventListener('click', () => {
     html?.classList.toggle('dark')
   })
+
+  document.addEventListener('mousemove', (e) => {
+    cursorFollower.style.left = `${e.clientX}px`;
+    cursorFollower.style.top = `${e.clientY}px`;
+  })
+
+
 </script>
 
 <!doctype html>
@@ -33,6 +41,7 @@ const { title } = Astro.props;
     <div class="text-black dark:text-white">
       <button id="btn-dark" class="fixed z-30 rounded-full bottom-4 right-4 bg-white dark:bg-blackAbout p-2 shadow-xl"><FaMoon size={40} /></button>
     </div>
+    <div class="cursor-follower"></div>
     <Header />
     <main>
       <slot />
@@ -60,6 +69,21 @@ const { title } = Astro.props;
   html {
     scroll-behavior: smooth;
   }
+
+  .cursor-follower {
+    position: fixed;
+    z-index: 20000;
+    width: 50px;
+    height: 50px;
+    background-color: #FFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease;
+    mix-blend-mode: difference;
+  }
+
 
 
 </style>

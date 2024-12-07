@@ -6,6 +6,8 @@ type Experience = {
   fechaInicio: string;
   fechaFin: string;
   entidad: string;
+  responsabilidades: string[];
+  logros: string[];
 };
 
 const experiences: Experience[] = [
@@ -14,12 +16,16 @@ const experiences: Experience[] = [
     fechaInicio: "Octubre 2022",
     fechaFin: "Actualidad",
     entidad: "Globant",
+    responsabilidades: ['Desarrollo de interfaces responsivas y accesibles con React.js y CSS moderno.', 'Integración de APIs RESTful y gestión de estado global con Redux Toolkit.', 'Optimización de rendimiento, logrando un 25% de reducción en tiempos de carga.', 'Implementación de pruebas automatizadas con Jest y React Testing Library.'],
+    logros: ['Incremento del 15% en tasas de conversión tras liderar una plataforma de ecommerce.', 'Mejora de accesibilidad en aplicaciones, alineadas con WCAG 2.1 AA.', 'Mejoré un 30% el rendimiento móvil con lazy loading de imágenes.', 'Entregué una aplicación web compleja a tiempo en un equipo internacional.']
   },
   {
     titulo: "Desarrollador Front-End Trainee ",
     fechaInicio: "Enero 2020",
     fechaFin: "Agosto 2022",
     entidad: "Mercadolibre ",
+    responsabilidades: ['Desarrollo de interfaces responsivas y accesibles con React.js y CSS moderno.', 'Integración de APIs RESTful y gestión de estado global con Redux Toolkit.', 'Optimización de rendimiento, logrando un 25% de reducción en tiempos de carga.', 'Implementación de pruebas automatizadas con Jest y React Testing Library.'],
+    logros: ['Incremento del 15% en tasas de conversión tras liderar una plataforma de ecommerce.', 'Mejora de accesibilidad en aplicaciones, alineadas con WCAG 2.1 AA.', 'Mejoré un 30% el rendimiento móvil con lazy loading de imágenes.', 'Entregué una aplicación web compleja a tiempo en un equipo internacional.']
   },
 ];
 ---
@@ -75,6 +81,8 @@ tl.from(textChar, 1, {
           fechaInicio={exp.fechaInicio}
           fechaFin={exp.fechaFin}
           entidad={exp.entidad}
+          respon={exp.responsabilidades}
+          logros={exp.logros}
         />
       );
     })
