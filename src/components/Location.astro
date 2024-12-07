@@ -1,33 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import sunIcon from "../../public/icons/sun-icon.svg";
----
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const time = document.querySelector(".time") as HTMLElement;
-
-        const updateClock = () => {
-            let date = new Date();
+    let date = new Date();
             let hours = date.getHours();
             let minutes = date.getMinutes();
             const horaDoce = hours % 12 || 12;
             const minutosFormateados = minutes.toString().padStart(2, "0");
             const periodo = hours > 12 ? "PM" : "AM";
-            if (time) {
-                time.textContent = `${horaDoce}: ${minutosFormateados} ${periodo}`;
-            } else {
-                console.error("ERROR");
-            }
-            console.log(`${horaDoce}: ${minutosFormateados} ${periodo}`);
-        };
-        updateClock();
-        setInterval(() => {
-            updateClock();
-        }, 1000);
-    });
-</script>
+            let time = `${horaDoce}: ${minutosFormateados} ${periodo}`;
 
+---
 <div
     class="m-auto flex xl:justify-end text-black dark:text-white xl:text-xl xl:pt-4"
 >
@@ -35,13 +18,17 @@ import sunIcon from "../../public/icons/sun-icon.svg";
         <p class="border-r px-4 hidden sm:block">Bogota, Colombia</p>
         <div class="hidden sm:flex gap-2 items-center">
             <Image src={sunIcon} alt="Icono de sol" />
-            <p class="time"></p>
+            <p class="time">{time}</p>
         </div>
 
         <div
             class="py-2 px-4 border dark:border-white rounded-3xl flex items-center gap-2"
         >
-            <span class="point">&nbsp</span>
+            <div class="point">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <p>Open to wrok</p>
         </div>
     </div>
@@ -56,28 +43,22 @@ import sunIcon from "../../public/icons/sun-icon.svg";
         background: #2ced5c;
     }
 
-    .point::after {
-        content: "";
+    .point span {
         position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
-        animation: pulse 2s infinite;
-        border-radius: 50%;
-        box-shadow: #81db96;
+        background: inherit;
+        border-radius: inherit;
+        opacity: .8;
+        animation: pulseAnimation 2s ease-out infinite;
     }
 
-    @keyframes pulse {
-        animation-duration: 2s;
-        animation-timing-function: ease;
-        animation-delay: 0s;
-        animation-iteration-count: infinite;
-        animation-direction: normal;
-        animation-fill-mode: none;
-        animation-play-state: running;
-        animation-name: Header_pulsate___tW0V;
-        animation-timeline: auto;
-        animation-range-start: normal;
+    @keyframes pulseAnimation {
+        100% {
+            opacity: 0;
+            transform: scale(2);
+        }
     }
+
+
 </style>
