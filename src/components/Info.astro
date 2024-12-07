@@ -1,20 +1,28 @@
 ---
-const { titulo, fechaInicio, fechaFin, entidad, respon, logros } = Astro.props;
-console.log(respon);
-console.log("Llgue");
+const { titulo, fechaInicio, fechaFin, entidad, descripcion } = Astro.props;
+import { IoIosArrowDown } from "react-icons/io";
 
 ---
 
 <script>
   const infoSection = document.querySelectorAll('#info-section');
   const acordions = document.querySelectorAll('#acordion-content');
+  const arrow = document.querySelector('.arrow');
+
+  let icon = document.createElement('img')
+    arrow?.appendChild(icon);
+    icon.src = '../../public/icons/down.svg'
+    
 
   infoSection.forEach((infoSection, i) => {
     infoSection?.addEventListener('click', () => {
     const acordion = acordions[i]
     acordion?.classList.toggle('inactive');
-    console.log('LLegue');
-    
+    if (acordion.classList.contains("inactive")) {
+      icon.src = '../../public/icons/down.svg'
+    } else {
+      icon.src = '../../public/icons/up.svg'
+    }
   })
   })
 
@@ -27,35 +35,16 @@ console.log("Llgue");
     </h2>
     <p class="text-lg mt-4 sm:m-1 opacity-50">{fechaInicio} - {fechaFin}</p>
   </div>
-  <p class="text-lg opacity-50">{entidad}</p>
+  <div class="flex justify-between">
+    <p class="text-lg opacity-50">{entidad}</p>
+    <p class="text-lg opacity-50 arrow">
+    </p>
+  </div>
   <div id="acordion-content" class="flex flex-col xl:flex-row justify-between overflow-hidden transition-all duration-300 inactive">
     <div>
-      <h2 class="text-2xl opacity-70">Responsabilidades</h2>
-    {
-      respon?.map((item:string)=> {
-        return (
           <div class="opacity-50">
-            <ul class="list-disc">
-              <li>{item}</li>
-            </ul>
+            <p>{descripcion}</p>
           </div>
-        )
-      })
-    }
-    </div>
-    <div>
-      <h2 class="text-2xl opacity-70">Logros</h2>
-    {
-      logros?.map((item:string)=> {
-        return (
-          <div class="opacity-50">
-            <ul class="list-disc">
-              <li>{item}</li>
-            </ul>
-          </div>
-        )
-      })
-    }
     </div>
   </div>
 </div>

@@ -6,26 +6,23 @@ type Experience = {
   fechaInicio: string;
   fechaFin: string;
   entidad: string;
-  responsabilidades: string[];
-  logros: string[];
+  descripcion: string;
 };
 
 const experiences: Experience[] = [
   {
-    titulo: "Desarrollador Front-End ",
+    titulo: "Desarrollador Front-End",
     fechaInicio: "Octubre 2022",
     fechaFin: "Actualidad",
-    entidad: "Globant",
-    responsabilidades: ['Desarrollo de interfaces responsivas y accesibles con React.js y CSS moderno.', 'Integración de APIs RESTful y gestión de estado global con Redux Toolkit.', 'Optimización de rendimiento, logrando un 25% de reducción en tiempos de carga.', 'Implementación de pruebas automatizadas con Jest y React Testing Library.'],
-    logros: ['Incremento del 15% en tasas de conversión tras liderar una plataforma de ecommerce.', 'Mejora de accesibilidad en aplicaciones, alineadas con WCAG 2.1 AA.', 'Mejoré un 30% el rendimiento móvil con lazy loading de imágenes.', 'Entregué una aplicación web compleja a tiempo en un equipo internacional.']
+    entidad: "ITGlobers",
+    descripcion: 'Responsable de traducir diseños en código en la plataforma VTEX, desarrollando componentes personalizados con React. Colaboré estrechamente con el equipo para garantizar interfaces visualmente atractivas y con altos estándares de usabilidad. Optimicé el rendimiento del ecommerce, implementando mejoras como la optimización de imágenes, minimización de archivos CSS y la reutilización de componentes JSONC. Aseguré la compatibilidad y la experiencia fluida en múltiples dispositivos y navegadores. Logré construir un ecommerce completo desde cero, configurando y personalizando páginas de productos, filtros de búsqueda, carrito de compras y checkout en la plataforma VTEX IO.'
   },
   {
     titulo: "Desarrollador Front-End Trainee ",
     fechaInicio: "Enero 2020",
     fechaFin: "Agosto 2022",
     entidad: "Mercadolibre ",
-    responsabilidades: ['Desarrollo de interfaces responsivas y accesibles con React.js y CSS moderno.', 'Integración de APIs RESTful y gestión de estado global con Redux Toolkit.', 'Optimización de rendimiento, logrando un 25% de reducción en tiempos de carga.', 'Implementación de pruebas automatizadas con Jest y React Testing Library.'],
-    logros: ['Incremento del 15% en tasas de conversión tras liderar una plataforma de ecommerce.', 'Mejora de accesibilidad en aplicaciones, alineadas con WCAG 2.1 AA.', 'Mejoré un 30% el rendimiento móvil con lazy loading de imágenes.', 'Entregué una aplicación web compleja a tiempo en un equipo internacional.']
+    descripcion: 'Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.'
   },
 ];
 ---
@@ -81,8 +78,7 @@ tl.from(textChar, 1, {
           fechaInicio={exp.fechaInicio}
           fechaFin={exp.fechaFin}
           entidad={exp.entidad}
-          respon={exp.responsabilidades}
-          logros={exp.logros}
+          descripcion={exp.descripcion}
         />
       );
     })
