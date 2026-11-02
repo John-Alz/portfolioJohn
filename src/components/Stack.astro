@@ -8,50 +8,85 @@ type Technology = {
 };
 
 const technologies: Technology[] = [
-{
-    image: "https://i.postimg.cc/N0nRYD6F/Java-Script-logo.png",
-    title: "JavaScript",
-    tag: "Lenguaje",
-  },
-  {
-    image: "https://i.postimg.cc/FshdM8MG/Type-Script.png",
-    title: "TypeScript",
-    tag: "Lenguaje",
-  },
-  {
-    image: "https://i.postimg.cc/J4HvWYjD/React-icon-svg.png",
-    title: "React.js",
-    tag: "Libreria",
-  },
-  {
-    image: "https://i.postimg.cc/7PFXSHTh/Nextjs.png",
-    title: "Next.js",
-    tag: "Web Framework",
-  },
-  {
-    image: "https://i.postimg.cc/0QnYwBtn/Figma.png",
-    title: "Figma",
-    tag: "Diseño",
-  },
-  {
-    image: "https://i.postimg.cc/Bnqz1SdD/Tailwind-CSS.png",
-    title: "TailwindCSS",
-    tag: "CSS",
-  },
-  {
-    image: "https://i.postimg.cc/DZNs0pxp/node-js-icon-1817x2048-g8tzf91e.png",
-    title: "Nodejs",
-    tag: "BackEnd",
-  },
-  {
-    image: "https://i.postimg.cc/DmkXdJkq/express-js.png",
-    title: "Express",
-    tag: "BackEnd",
-  },
+  // {
+  //     image: "https://i.postimg.cc/N0nRYD6F/Java-Script-logo.png",
+  //     title: "JavaScript",
+  //     tag: "Lenguaje",
+  //   },
+  //   {
+  //     image: "https://i.postimg.cc/FshdM8MG/Type-Script.png",
+  //     title: "TypeScript",
+  //     tag: "Lenguaje",
+  //   },
+  //   {
+  //     image: "https://i.postimg.cc/J4HvWYjD/React-icon-svg.png",
+  //     title: "React.js",
+  //     tag: "Libreria",
+  //   },
+  //   {
+  //     image: "https://i.postimg.cc/7PFXSHTh/Nextjs.png",
+  //     title: "Next.js",
+  //     tag: "Web Framework",
+  //   },
+  //   {
+  //     image: "https://i.postimg.cc/0QnYwBtn/Figma.png",
+  //     title: "Figma",
+  //     tag: "Diseño",
+  //   },
+  // {
+  //   image: "https://i.postimg.cc/Bnqz1SdD/Tailwind-CSS.png",
+  //   title: "TailwindCSS",
+  //   tag: "CSS",
+  // },
+  // {
+  //   image: "https://i.postimg.cc/DZNs0pxp/node-js-icon-1817x2048-g8tzf91e.png",
+  //   title: "Nodejs",
+  //   tag: "BackEnd",
+  // },
+  // {
+  //   image: "https://i.postimg.cc/DmkXdJkq/express-js.png",
+  //   title: "Express",
+  //   tag: "BackEnd",
+  // },
   {
     image: "https://i.postimg.cc/gJ1DQ0b0/226777.png",
     title: "Java",
     tag: "Lenguaje",
+  },
+  {
+    image: "/public/imgs/stack/brand.png",
+    title: "SpringBoot",
+    tag: "Framework",
+  },
+  {
+    image: "/public/imgs/stack/reactive-spring-boot.png",
+    title: "Webflux",
+    tag: "Framework",
+  },
+  {
+    image: "/public/imgs/stack/Postgresql_logo.webp",
+    title: "PostgreSQL",
+    tag: "Base de datos",
+  },
+  {
+    image: "/public/imgs/stack/dynamodb_logo.jpg",
+    title: "DynamoDB",
+    tag: "Base de datos",
+  },
+  {
+    image: "/public/imgs/stack/aws-color.png",
+    title: "AWS",
+    tag: "Cloud",
+  },
+  {
+    image: "/public/imgs/stack/terraform-icon-tew8r4clf5ocvoyj0o05j.webp",
+    title: "Terraform",
+    tag: "IaC",
+  },
+  {
+    image: "/public/imgs/stack/docker-logo.png",
+    title: "Docker",
+    tag: "Contenedores",
   },
 ];
 ---
@@ -68,55 +103,68 @@ const technologies: Technology[] = [
 
   gsap.registerPlugin(ScrollTrigger);
 
- const gsapItems = ["#container-text-2 .title-2"];
+  const gsapItems = ["#container-text-2 .title-2"];
 
- gsapItems.forEach((selector: any) => {
-  gsap.from(selector, {
-    y:300,
-    rotation: 15,
-    duration: 4,
-    stagger: 0.2,
-    ease: "power4.out",
+  gsapItems.forEach((selector: any) => {
+    gsap.from(selector, {
+      y: 300,
+      rotation: 15,
+      duration: 4,
+      stagger: 0.2,
+      ease: "power4.out",
 
-    scrollTrigger: {
-      trigger: selector,
-      start: 'top 50%',
-      end: 'bottom 90%',
-      toggleActions: "play none none node",
-      scrub: 12
-    }
+      scrollTrigger: {
+        trigger: selector,
+        start: "top 50%",
+        end: "bottom 90%",
+        toggleActions: "play none none node",
+        scrub: 12,
+      },
+    });
+  });
 
-  })
- })
-
- gsap.fromTo("#tech-cards .card", {
-  opacity: 0,
-  y: 100
- },{
-  opacity: 1,
-  y: 0,
-  duration: 1,
-  stagger: 0.2,
-  scrollTrigger: {
-    trigger: "#tech-cards",
-    start: 'top 70%',
-    end: 'bottom 20%',
-    scrub: 1.5
-  }
- }
-)
-
+  gsap.fromTo(
+    "#tech-cards .card",
+    {
+      opacity: 0,
+      y: 100,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: "#tech-cards",
+        start: "top 70%",
+        end: "bottom 20%",
+        scrub: 1.5,
+      },
+    },
+  );
 </script>
 
 <section id="stack" class="text-black dark:text-white">
-  <div id="container-text-2" class="w-[80vw] lg:w-[700px] font-semibold leading-tight mb-12 mt-12 ">
-    <h2 data-splitting class="w-11/12 text-5xl lg:text-[80px] opacity-50 title-2">Acerca</h2>
-    <h2 data-splitting class="w-11/12 text-5xl lg:text-[80px] text-start lg:text-end title-2">
+  <div
+    id="container-text-2"
+    class="w-[80vw] lg:w-[700px] font-semibold leading-tight mb-12 mt-12"
+  >
+    <h2
+      data-splitting
+      class="w-11/12 text-5xl lg:text-[80px] opacity-50 title-2"
+    >
+      Acerca
+    </h2>
+    <h2
+      data-splitting
+      class="w-11/12 text-5xl lg:text-[80px] text-start lg:text-end title-2"
+    >
       De mi stack
     </h2>
   </div>
-  <div id="tech-cards"
-    class="md:w-10/12 m-auto grid grid-cols-2 md: gap-5 md:gap-y-12 sm:gap-x-12 sm:grid-cols-2 lg:grid-cols-3"
+  <div
+    id="tech-cards"
+    class="md:w-10/12 xl:w-full m-auto grid grid-cols-2 gap-5 md:gap-y-12 sm:gap-x-12 xl:gap-x-8 lg:grid-cols-3 xl:grid-cols-4"
   >
     <!-- <div class="gridStack"> -->
     {
@@ -131,7 +179,7 @@ const technologies: Technology[] = [
   </div>
 </section>
 <style>
-   #stack {
+  #stack {
     width: 90%;
     margin: 0 auto;
   }
