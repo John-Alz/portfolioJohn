@@ -1,8 +1,5 @@
 ---
 import Location from "./Location.astro";
-import { Image } from "astro:assets";
-import menuOpen from "../../public/icons/menu-burger.svg";
-import menuClose from "../../public/icons/close-menu.svg";
 import { IoMenu, IoClose } from "react-icons/io5";
 ---
 
@@ -26,20 +23,19 @@ import { IoMenu, IoClose } from "react-icons/io5";
     console.log("llegue");
   });
 
-  // Scroll animado hacia cada sección
-  const links = document.querySelectorAll<HTMLAnchorElement>('header a[href^="#"]');
+  const links = document.querySelectorAll<HTMLAnchorElement>(
+    'header a[href^="#"]',
+  );
 
   links.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const target = link.getAttribute("href") ?? "#home";
 
-      // Cierra el menú mobile si está abierto
       section?.classList.add("inactive");
 
       gsap.to(window, {
         duration: 1.2,
-        // #home existe dos veces (desktop y mobile), así que vamos al inicio
         scrollTo: target === "#home" ? 0 : { y: target, offsetY: 20 },
         ease: "power3.inOut",
       });
@@ -54,10 +50,10 @@ import { IoMenu, IoClose } from "react-icons/io5";
     </h2>
     <nav class="hidden xl:flex xl:h-14">
       <ul
-        class="flex gap-2 items-center rounded-full bg-white dark:bg-blackAbout text-grayv1 text-lg"
+        class="group flex gap-2 items-center rounded-full bg-white dark:bg-blackAbout text-grayv1 text-lg"
       >
         <li
-          class="bg-black text-white flex items-center dark:bg-white dark:text-black h-full px-5 rounded-full"
+          class="bg-black text-white flex items-center dark:bg-white dark:text-black h-full px-5 rounded-full ease-in duration-300 group-has-[li:hover]:bg-[transparent] group-has-[li:hover]:text-grayv2 dark:group-has-[li:hover]:bg-[transparent] dark:group-has-[li:hover]:text-grayv1 hover:!bg-black hover:!text-white dark:hover:!bg-white dark:hover:!text-black"
         >
           <a href="#home">Inicio</a>
         </li>
@@ -144,7 +140,7 @@ import { IoMenu, IoClose } from "react-icons/io5";
   }
 
   .light {
-    background: #F3F3F3;
+    background: #f3f3f3;
   }
   .inactive {
     display: none;
