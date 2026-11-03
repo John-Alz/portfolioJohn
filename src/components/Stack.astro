@@ -14,37 +14,37 @@ const technologies: Technology[] = [
     tag: "Lenguaje",
   },
   {
-    image: "/public/imgs/stack/brand.png",
+    image: "/imgs/stack/brand.png",
     title: "SpringBoot",
     tag: "Framework",
   },
   {
-    image: "/public/imgs/stack/reactive-spring-boot.png",
+    image: "/imgs/stack/reactive-spring-boot.png",
     title: "Webflux",
     tag: "Framework",
   },
   {
-    image: "/public/imgs/stack/Postgresql_logo.webp",
+    image: "/imgs/stack/Postgresql_logo.webp",
     title: "PostgreSQL",
     tag: "Base de datos",
   },
   {
-    image: "/public/imgs/stack/dynamodb_logo.jpg",
+    image: "/imgs/stack/dynamodb_logo.jpg",
     title: "DynamoDB",
     tag: "Base de datos",
   },
   {
-    image: "/public/imgs/stack/aws-color.png",
+    image: "/imgs/stack/aws-color.png",
     title: "AWS",
     tag: "Cloud",
   },
   {
-    image: "/public/imgs/stack/terraform-icon-tew8r4clf5ocvoyj0o05j.webp",
+    image: "/imgs/stack/terraform-icon-tew8r4clf5ocvoyj0o05j.webp",
     title: "Terraform",
     tag: "IaC",
   },
   {
-    image: "/public/imgs/stack/docker-logo.png",
+    image: "/imgs/stack/docker-logo.png",
     title: "Docker",
     tag: "Contenedores",
   },
@@ -52,9 +52,51 @@ const technologies: Technology[] = [
 ---
 
 <script>
+  import { gsap } from "gsap";
   import { scrambleTitles } from "../scripts/scrambleTitles";
 
   scrambleTitles("#container-text-2");
+
+  if (window.matchMedia("(hover: hover)").matches) {
+    gsap.utils.toArray<HTMLElement>("#tech-cards .card").forEach((card) => {
+      const logo = card.querySelector(".card-logo");
+      gsap.set(card, { transformPerspective: 800 });
+
+      const rotX = gsap.quickTo(card, "rotationX", {
+        duration: 0.4,
+        ease: "power3",
+      });
+      const rotY = gsap.quickTo(card, "rotationY", {
+        duration: 0.4,
+        ease: "power3",
+      });
+      const logoX = gsap.quickTo(logo, "x", { duration: 0.4, ease: "power3" });
+      const logoY = gsap.quickTo(logo, "y", { duration: 0.4, ease: "power3" });
+
+      card.addEventListener("mouseenter", () => {
+        gsap.to(card, { y: -8, duration: 0.3, ease: "power2.out" });
+      });
+
+      card.addEventListener("mousemove", (e) => {
+        const { left, top, width, height } = card.getBoundingClientRect();
+        const x = (e.clientX - left) / width - 0.5;
+        const y = (e.clientY - top) / height - 0.5;
+
+        rotY(x * 12);
+        rotX(-y * 12);
+        logoX(x * 16);
+        logoY(y * 16);
+      });
+
+      card.addEventListener("mouseleave", () => {
+        gsap.to(card, { y: 0, duration: 0.3, ease: "power2.out" });
+        rotX(0);
+        rotY(0);
+        logoX(0);
+        logoY(0);
+      });
+    });
+  }
 </script>
 
 <section id="stack" class="text-black dark:text-white">
