@@ -52,34 +52,9 @@ const technologies: Technology[] = [
 ---
 
 <script>
-  import { gsap } from "gsap";
   import { scrambleTitles } from "../scripts/scrambleTitles";
 
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
   scrambleTitles("#container-text-2");
-
-  gsap.fromTo(
-    "#tech-cards .card",
-    {
-      opacity: 0,
-      y: 100,
-    },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: "#tech-cards",
-        start: "top 70%",
-        end: "bottom 20%",
-        scrub: 1.5,
-      },
-    },
-  );
 </script>
 
 <section id="stack" class="text-black dark:text-white">
@@ -94,12 +69,12 @@ const technologies: Technology[] = [
   </div>
   <div
     id="tech-cards"
-    class="md:w-10/12 xl:w-full m-auto grid grid-cols-2 gap-5 md:gap-y-12 sm:gap-x-12 xl:gap-x-8 lg:grid-cols-3 xl:grid-cols-4"
+    class="md:w-10/12 xl:w-full m-auto grid grid-cols-2 gap-3 sm:gap-5 md:gap-y-12 sm:gap-x-12 xl:gap-x-8 lg:grid-cols-3 xl:grid-cols-4"
   >
     {
       technologies.map((tech, i) => {
         return (
-          <div class="card">
+          <div class="card min-w-0">
             <CardTech image={tech.image} title={tech.title} tag={tech.tag} />
           </div>
         );
