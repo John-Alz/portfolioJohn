@@ -1,6 +1,6 @@
 ---
-import { Image } from 'astro:assets';
-import me from '../../public/imgs/Me.png'
+import { Image } from "astro:assets";
+import me from "../../public/imgs/Me.png";
 ---
 
 <script>
@@ -15,67 +15,80 @@ import me from '../../public/imgs/Me.png'
 
   gsap.registerPlugin(ScrollTrigger);
 
- const gsapItem = gsap.utils.toArray('.container-text');
+  const gsapItem = gsap.utils.toArray(".container-text");
 
- gsapItem.forEach((gsIt: any) => {
-  const textChar = gsIt.querySelectorAll('.char')
+  gsapItem.forEach((gsIt: any) => {
+    const textChar = gsIt.querySelectorAll(".char");
 
-  let tl = gsap.timeline({
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: gsIt,
+        start: "top 80%",
+        end: "70% 80%",
+        toggleActions: "play none none node",
+        // markers: true,
+        scrub: 12,
+      },
+    });
+
+    tl.from(textChar, 1, {
+      opacity: 0,
+      yPercent: 130,
+      stagger: 0.08,
+      ease: "back.inOut",
+    });
+  });
+
+  gsap.to("#card-about", {
     scrollTrigger: {
-      trigger: gsIt,
-      start: "top 80%",
-      end: "70% 80%",
-      toggleActions: "play none none node",
-      // markers: true,
-      scrub: 12
-    }
-  })
-
-  tl.from(textChar, 1, {
-    opacity: 0,
-    yPercent: 130,
-    stagger: 0.08,
-    ease: "back.inOut"
-  })
-
- })
-
- gsap.to("#card-about", {
-  scrollTrigger: {
-    trigger: "#card-about",
-    start: "top 90%",
-    end: "bottom bottom",
-    scrub: 1.5
-  },
-  width: '100%',
- })
-
+      trigger: "#card-about",
+      start: "top 90%",
+      end: "bottom bottom",
+      scrub: 1.5,
+    },
+    width: "100%",
+  });
 </script>
 
 <section id="about" class="text-black dark:text-white pb-12">
-  <div class="w-[190px] lg:w-[300px] font-semibold leading-tight mb-12 mt-12 container-text">
-    <h2 data-splitting class="text-5xl lg:text-[80px] opacity-50 section-title">Acerca</h2>
-    <h2  data-splitting class="text-5xl lg:text-[80px] text-end section-title">De mi</h2>
+  <div
+    class="w-[190px] lg:w-[300px] font-semibold leading-tight mb-12 mt-12 container-text"
+  >
+    <h2 data-splitting class="text-5xl lg:text-[80px] opacity-50 section-title">
+      Acerca
+    </h2>
+    <h2 data-splitting class="text-5xl lg:text-[80px] text-end section-title">
+      De mi
+    </h2>
   </div>
-  <div id="card-about" class="w-[60vw] m-auto bg-white dark:bg-blackAbout  p-8 rounded-3xl mt-12">
+  <div
+    id="card-about"
+    class="w-[60vw] m-auto bg-white dark:bg-blackAbout p-8 rounded-3xl mt-12"
+  >
     <div class="xl:flex">
       <div class="xl:w-8/12">
-        <p class="xl:text-2xl text-blackBg dark:text-grayv1 ">
-          ¡Hola! Soy <span class="text-black dark:text-white font-medium">John Angel.</span>
+        <p class="xl:text-2xl text-blackBg dark:text-grayv1">
+          ¡Hola! Soy <span class="text-black dark:text-white font-medium"
+            >John Angel.</span
+          >
           <br />
           <br />
 
-          Soy un <span class="text-black dark:text-white font-medium">desarrollador web Full Stack</span> con
-          una fuerte inclinación hacia el <span class="text-black dark:text-white font-medium"
-            >FrontEnd</span
-          > y el <span class="text-black dark:text-white font-medium">diseño de aplicaciones web</span>. Me
-          encanta transformar ideas en experiencias digitales atractivas y
+          Soy un <span class="text-black dark:text-white font-medium"
+            >desarrollador web Full Stack</span
+          > con una fuerte inclinación hacia el <span
+            class="text-black dark:text-white font-medium">Backend</span
+          > y el <span class="text-black dark:text-white font-medium"
+            >desarrollo de sistemas escalables</span
+          >. Me encanta transformar ideas en experiencias digitales atractivas y
           funcionales. <br />
           <br />
 
-          Siempre estoy dispuesto a <span class="text-black dark:text-white font-medium"
+          Siempre estoy dispuesto a <span
+            class="text-black dark:text-white font-medium"
             >trabajar en equipo</span
-          > y me apasiona estar en <span class="text-black dark:text-white font-medium"
+          > y me apasiona estar en <span
+            class="text-black dark:text-white font-medium"
             >constante aprendizaje</span
           >, explorando nuevas tecnologías y metodologías. Recientemente, he
           estado trabajando en algunos proyectos que puedes encontrar en la
@@ -91,7 +104,11 @@ import me from '../../public/imgs/Me.png'
       <div
         class="flex justify-center items-center py-8 lg:w-4/12 lg:ustify-end"
       >
-      <Image class="w-40 hidden xl:block xl:w-[300px]" src={me} alt='emoji me'/>
+        <Image
+          class="w-40 hidden xl:block xl:w-[300px]"
+          src={me}
+          alt="emoji me"
+        />
       </div>
     </div>
     <div class="mt-4 flex justify-center xl:justify-start">

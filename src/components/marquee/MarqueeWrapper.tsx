@@ -10,10 +10,9 @@ type Item = {
 }
 
 const items: Item[] = [
-  {title: "Diseño Web", img: "/imgs/react.svg"},
-  {title: "Desarrollo Front-End", img: "/imgs/react.svg"},
-  {title: "Desarrollo Back-End", img: "/imgs/react.svg"},
-  {title: "Responsive Design", img: "/imgs/react.svg"},
+  { title: "Microservicios", img: "/imgs/react.svg" },
+  { title: "Desarrollo Back-End", img: "/imgs/react.svg" },
+  { title: "Cloud Computing", img: "/imgs/react.svg" },
 ]
 
 export default function MarqueeWrapper() {
@@ -25,11 +24,11 @@ export default function MarqueeWrapper() {
         {
           items.map((item, i) => {
             return (
-              <div className='flex gap-12 cursor-pointer'  key={i}>
+              <div className='flex gap-12 cursor-pointer' key={i}>
                 <h2 className='item-text dark:item-text-dark opacity-60'>{item.title}</h2>
                 {/* <img className='xl:translate-y-5' src={item.img} alt="icon-react" /> */}
-                <div  className='flex items-center text-black dark:text-white' >
-                <FaReact size={90}/>
+                <div className='flex items-center text-black dark:text-white' >
+                  <FaReact size={90} />
                 </div>
                 <div></div>
               </div>
