@@ -7,6 +7,11 @@ import { IoMenu, IoClose } from "react-icons/io5";
 ---
 
 <script>
+  import { gsap } from "gsap";
+  import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+  gsap.registerPlugin(ScrollToPlugin);
+
   const btnOpen = document.querySelector("#btn-open");
   const btnClose = document.querySelector("#btn-close");
   const section = document.querySelector(".active");
@@ -19,6 +24,26 @@ import { IoMenu, IoClose } from "react-icons/io5";
   btnClose?.addEventListener("click", () => {
     section?.classList.toggle("inactive");
     console.log("llegue");
+  });
+
+  // Scroll animado hacia cada sección
+  const links = document.querySelectorAll<HTMLAnchorElement>('header a[href^="#"]');
+
+  links.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = link.getAttribute("href") ?? "#home";
+
+      // Cierra el menú mobile si está abierto
+      section?.classList.add("inactive");
+
+      gsap.to(window, {
+        duration: 1.2,
+        // #home existe dos veces (desktop y mobile), así que vamos al inicio
+        scrollTo: target === "#home" ? 0 : { y: target, offsetY: 20 },
+        ease: "power3.inOut",
+      });
+    });
   });
 </script>
 
